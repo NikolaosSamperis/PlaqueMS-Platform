@@ -46,8 +46,7 @@ Precomputed visualisations (e.g. heatmaps and differential expression summaries)
 ### 3.1.2 Proteins Page
 
 <p align="center">
-  <img src="images/Protein_search_engine.png" width="45%">
-  <img src="images/Protein_annotations_page.png" width="45%">
+  <img src="images/Protein_annotations_page.png" width="70%">
 </p>
 
 The Proteins module enables querying of protein information using gene names or UniProt accession IDs.
@@ -115,7 +114,9 @@ Certain modules are restricted to authenticated users, ensuring controlled acces
 ### 3.1.6 PlaQuery: Restricted Access Modules
 
 <p align="center">
-  <img src="images/Filters_section.png" width="60%">
+  <img src="images/Protein_search_engine.png" width="45%">
+  <img src="images/Filters_section.png" width="45%">
+  <img src="images/Results_protein_search_engine.png" width="60%">
 </p>
 
 PlaQuery provides advanced querying capabilities across the integrated datasets.
