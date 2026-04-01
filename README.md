@@ -81,9 +81,9 @@ The interface allows users to explore molecular differences between plaque pheno
 ### 3.1.4 Protein Networks Page
 
 <p align="center">
-  <img src="images/Protein_networks.png" width="60%">
-  <img src="Protein_network_node_metrics.png" width="45%">
-  <img src="Protein_network_edge_metrics.png" width="45%">
+  <img src="images/Protein_networks.png" width="70%">
+  <img src="images/Protein_network_node_metrics.png" width="45%">
+  <img src="images/Protein_network_edge_metrics.png" width="45%">
 </p>
 
 The Protein Networks module enables interactive exploration of protein–protein interaction (PPI) networks.
@@ -102,6 +102,7 @@ This supports systems-level interpretation of plaque biology.
 <p align="center">
   <img src="images/Login_page.png" width="45%">
   <img src="images/Register_new_user_page.png" width="45%">
+  <img src="images/Admin_dashboard.png" width="60%">
 </p>
 
 PlaqueMS includes a secure authentication system with:
