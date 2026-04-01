@@ -28,12 +28,10 @@ By combining rich exploratory capabilities with machine learning-based predictio
 
 PlaqueMS is supported by a dual-database architecture combining MySQL (relational) and Neo4j (graph), bridging data storage efficiency with biological complexity while enabling efficient querying, relationship-driven analysis, and both exploratory and predictive workflows.
 
----
-
-### Relational Database (MySQL)
+### 1. Relational Database (MySQL)
 
 <p align="center">
-  <img src="images/MySQL_DB_schema.png" width="60%">
+  <img src="images/MySQL_DB_schema.png" width="50%">
 </p>
 
 The MySQL database is responsible for the structured storage of core entities, analytical results, and system-level data.
@@ -70,10 +68,9 @@ The MySQL database is responsible for the structured storage of core entities, a
 - Implements **foreign key relationships** to enforce schema consistency  
 - Optimised for **fast retrieval of structured data and precomputed analytical results**  
 - Stores **file paths** rather than raw data, enabling efficient file-based access  
+<br>
 
----
-
-### Graph Database (Neo4j)
+### 2. Graph Database (Neo4j)
 
 <p align="center">
   <img src="images/Neo4j_DB_schema.png" width="40%">
@@ -110,10 +107,12 @@ The Neo4j database models complex biological and clinical relationships that are
 - Complements MySQL by modelling and querying highly connected biological relationships  
 
 ---
+<br>
 
 ## Results
 
 This section summarises the core modules and functionalities of PlaqueMS, following the structure and workflow presented in the thesis.
+<br>
 
 ### 1. Home Page
 
@@ -122,6 +121,8 @@ This section summarises the core modules and functionalities of PlaqueMS, follow
 </p>
 
 The Home page serves as the entry point of PlaqueMS, introducing the biological context of atherosclerosis and the purpose of the platform, and directing users to the available analytical modules.
+<br>
+<br>
 
 ### 2. Proteins Module
 
@@ -136,12 +137,14 @@ Users can:
 - Retrieve corresponding Uniprot accession IDs, UniProtKB IDs and gene name mappings  
 
 This module supports consistent identification and mapping of proteins across datasets.
+<br>
+<br>
 
 ### 3. Differential Expression Analysis Module
 
 <p align="center">
-  <img src="images/Diff_expression_analysis_page.png" width="45%">
-  <img src="images/Volcano_plot.png" width="45%">
+  <img src="images/Diff_expression_analysis_page.png" width="49%">
+  <img src="images/Volcano_plot.png" width="49%">
 </p>
 
 This module provides access to precomputed differential expression results across cohorts and experimental comparisons.
@@ -152,13 +155,15 @@ Key features include:
 - Filtering by dataset, protein extraction protocol, plaque region, and experimental comparison via the hierarchical structure  
 
 It supports comparison of protein-level differences across conditions and plaque regions.
+<br>
+<br>
 
 ### 4. Protein Networks Module
 
 <p align="center">
   <img src="images/Protein_networks.png" width="70%">
-  <img src="images/Protein_network_node_metrics.png" width="45%">
-  <img src="images/Protein_network_edge_metrics.png" width="45%">
+  <img src="images/Protein_network_node_metrics.png" width="49%">
+  <img src="images/Protein_network_edge_metrics.png" width="49%">
 </p>
 
 The Protein Networks module enables visualisation and exploration of protein–protein interaction networks derived from proteomic data using Cytoscape.
@@ -171,12 +176,14 @@ Users can:
 - Export node and edge data, as well as the generated network visualisation (PNG), for downstream analysis  
 
 This supports exploration of protein interactions within the context of the analysed datasets.
+<br>
+<br>
 
 ### 5. Authentication & Administration
 
 <p align="center">
-  <img src="images/Login_page.png" width="45%">
-  <img src="images/Register_new_user_page.png" width="45%">
+  <img src="images/Login_page.png" width="49%">
+  <img src="images/Register_new_user_page.png" width="49%">
   <img src="images/Admin_dashboard.png" width="60%">
 </p>
 
@@ -187,12 +194,14 @@ PlaqueMS implements a secure authentication and user management system, includin
 - Administrative approval of new user accounts  
 
 Access to selected modules and functionalities is restricted to authorised users.
+<br>
+<br>
 
 ### 6. PlaQuery & Protein Abundance (Restricted Modules)
 
 <p align="center">
-  <img src="images/Protein_search_engine.png" width="45%">
-  <img src="images/Filters_section.png" width="45%">
+  <img src="images/Protein_search_engine.png" width="49%">
+  <img src="images/Filters_section.png" width="49%">
   <img src="images/Results_protein_search_engine.png" width="60%">
 </p>
 
@@ -206,12 +215,14 @@ Users can:
 - Export results (CSV, Excel, TSV)  
 
 This module supports exploration of protein abundance across cohorts and conditions through flexible, filter-based queries.
+<br>
+<br>
 
 ### 7. Predictive Modelling (Calcification & SYNTAX Score Modules)
 
 <p align="center">
-  <img src="images/SYNTAX_score_page.png" width="45%">
-  <img src="images/SYNTAX_score_prediction_results.png" width="45%">
+  <img src="images/SYNTAX_score_page.png" width="49%">
+  <img src="images/SYNTAX_score_prediction_results.png" width="49%">
 </p>
 
 PlaqueMS includes two separate predictive modelling modules based on machine learning models trained on proteomics data:
@@ -228,6 +239,8 @@ Users can:
 - Apply optional preprocessing (e.g. log₂ transformation)  
 
 These modules enable application of trained models to new proteomic data and can support estimation of calcification status or SYNTAX score in similar cohorts lacking these clinical measurements.
+<br>
+<br>
 
 ### 8. Model Performance and Validation
 
@@ -246,6 +259,8 @@ Model predictions of calcification probability show moderate positive correlatio
 Correlations were assessed using Spearman’s rank correlation coefficient, indicating consistent associations between predicted probabilities and quantitative measures of calcification burden.
 
 These results suggest that, for the evaluated model, predicted probabilities reflect gradation in calcification burden across samples, rather than representing purely binary classification outcomes. This is useful as it enables differentiation between varying levels of calcification severity, supporting more nuanced interpretation of disease state across samples.
+<br>
+<br>
 
 ### 9. Clinical Stratification
 
@@ -258,6 +273,9 @@ Predicted calcification probabilities differ between symptomatic and asymptomati
 Statistical testing indicates that this difference is unlikely to be due to chance (p = 0.0412), although there is considerable overlap between the two groups and only modest separation (AUC = 0.63).
 
 As this was evaluated using cross-cohort validation, the results suggest that the model captures some relationship between predicted calcification and symptom status in an independent dataset, but the effect is limited.
+
+---
+<br>
 
 ## 📄 Full Thesis
 
