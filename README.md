@@ -115,8 +115,6 @@ The Neo4j database models complex biological and clinical relationships that are
 
 This section summarises the core modules and functionalities of PlaqueMS, following the structure and workflow presented in the thesis.
 
----
-
 ### 1. Home Page
 
 <p align="center">
@@ -124,8 +122,6 @@ This section summarises the core modules and functionalities of PlaqueMS, follow
 </p>
 
 The Home page serves as the entry point of PlaqueMS, introducing the biological context of atherosclerosis and the purpose of the platform, and directing users to the available analytical modules.
-
----
 
 ### 2. Proteins Module
 
@@ -140,8 +136,6 @@ Users can:
 - Retrieve corresponding Uniprot accession IDs, UniProtKB IDs and gene name mappings  
 
 This module supports consistent identification and mapping of proteins across datasets.
-
----
 
 ### 3. Differential Expression Analysis Module
 
@@ -158,8 +152,6 @@ Key features include:
 - Filtering by dataset, protein extraction protocol, plaque region, and experimental comparison via the hierarchical structure  
 
 It supports comparison of protein-level differences across conditions and plaque regions.
-
----
 
 ### 4. Protein Networks Module
 
@@ -180,8 +172,6 @@ Users can:
 
 This supports exploration of protein interactions within the context of the analysed datasets.
 
----
-
 ### 5. Authentication & Administration
 
 <p align="center">
@@ -197,8 +187,6 @@ PlaqueMS implements a secure authentication and user management system, includin
 - Administrative approval of new user accounts  
 
 Access to selected modules and functionalities is restricted to authorised users.
-
----
 
 ### 6. PlaQuery & Protein Abundance (Restricted Modules)
 
@@ -218,8 +206,6 @@ Users can:
 - Export results (CSV, Excel, TSV)  
 
 This module supports exploration of protein abundance across cohorts and conditions through flexible, filter-based queries.
-
----
 
 ### 7. Predictive Modelling (Calcification & SYNTAX Score Modules)
 
@@ -243,8 +229,6 @@ Users can:
 
 These modules enable application of trained models to new proteomic data and can support estimation of calcification status or SYNTAX score in similar cohorts lacking these clinical measurements.
 
----
-
 ### 8. Model Performance and Validation
 
 <p align="center">
@@ -263,8 +247,6 @@ Correlations were assessed using Spearman’s rank correlation coefficient, indi
 
 These results suggest that, for the evaluated model, predicted probabilities reflect gradation in calcification burden across samples, rather than representing purely binary classification outcomes. This is useful as it enables differentiation between varying levels of calcification severity, supporting more nuanced interpretation of disease state across samples.
 
----
-
 ### 9. Clinical Stratification
 
 <p align="center">
@@ -276,8 +258,6 @@ Predicted calcification probabilities differ between symptomatic and asymptomati
 Statistical testing indicates that this difference is unlikely to be due to chance (p = 0.0412), although there is considerable overlap between the two groups and only modest separation (AUC = 0.63).
 
 As this was evaluated using cross-cohort validation, the results suggest that the model captures some relationship between predicted calcification and symptom status in an independent dataset, but the effect is limited.
-
----
 
 ## 📄 Full Thesis
 
