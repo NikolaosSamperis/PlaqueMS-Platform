@@ -24,6 +24,93 @@ By combining rich exploratory capabilities with machine learning-based predictio
 
 ---
 
+## Database Architecture
+
+PlaqueMS is supported by a dual-database architecture combining MySQL (relational) and Neo4j (graph), bridging data storage efficiency with biological complexity while enabling efficient querying, relationship-driven analysis, and both exploratory and predictive workflows.
+
+---
+
+### Relational Database (MySQL)
+
+<p align="center">
+  <img src="images/MySQL_DB_schema.png" width="60%">
+</p>
+
+The MySQL database is responsible for the structured storage of core entities, analytical results, and system-level data.
+
+#### Key Components
+
+- **Proteins Table**
+  - Stores protein identifiers (UniProt accession IDs, gene names)
+  - Serves as a central reference for mapping across datasets
+
+- **Datasets & Experiments**
+  - `datasets`: Represents individual cohorts (e.g. Vienna, Athero-Express, Virginia)
+  - `experiments_types`:
+    - Organises experiments hierarchically as **cohort → protein extraction protocol → comparison/experiment**, with each node linked to a file path  
+    - Powers the tree-based interface and allows dynamic retrieval of the relevant results for the selected branch  
+
+- **Differential Expression Results**
+  - `diff_result`: Stores statistical outputs (e.g. filenames, filepaths of analysis results such as volcano plots)
+
+- **Protein Networks**
+  - `networks`: Contains metadata and file references for protein–protein interaction networks
+  - `network_and_experiment`: Links networks to specific experiments
+
+- **Documents & Precomputed Outputs**
+  - `statistics`: Stores generated visualisations (heatmaps, boxplots, etc.)
+  - `doc_and_experiment`: Associates analytical outputs with experiments
+
+- **User Management**
+  - `login_customuser`: Handles authentication, access control, and user roles (admin, approved users, etc.)
+
+#### Key Characteristics
+
+- Uses **UUID-based identifiers** to ensure data integrity and consistent referencing  
+- Implements **foreign key relationships** to enforce schema consistency  
+- Optimised for **fast retrieval of structured data and precomputed analytical results**  
+- Stores **file paths** rather than raw data, enabling efficient file-based access  
+
+---
+
+### Graph Database (Neo4j)
+
+<p align="center">
+  <img src="images/Neo4j_DB_schema.png" width="40%">
+</p>
+
+The Neo4j database models complex biological and clinical relationships that are inefficient to represent and traverse using a relational (table-based) schema.
+
+#### Core Node Types
+
+- **Patient**
+  - Represents individual subjects with associated clinical metadata
+
+- **Experiment**
+  - Encodes experimental context (cohort, protein extraction protocol, plaque region)
+
+- **Protein**
+  - Represents quantified proteins across samples
+
+- **Core / Periphery**
+  - Captures spatial plaque regions (e.g. core vs periphery)
+
+#### Relationships
+
+- Patients are linked to experiments  
+- Experiments are linked to proteins via quantified protein abundance measurements  
+- Proteins are connected via inferred protein–protein interactions derived from conditional mutual information–based network analysis  
+- Experiments are associated with spatial plaque regions (e.g. core, periphery)    
+
+#### Key Characteristics
+
+- Enables phenotype-driven queries by integrating patient-level clinical metadata, plaque regions, and experimental context to explore protein abundance across cohorts  
+- Supports multi-hop traversal (e.g. patient → experiment → region → protein), enabling integrative analysis across data layers  
+- Allows dynamic, flexible querying without complex joins required in relational databases  
+- Complements MySQL by modelling and querying highly connected biological relationships  
+
+---
+
 ## Results
 
 This section summarises the core modules and functionalities of PlaqueMS, following the structure and workflow presented in the thesis.
