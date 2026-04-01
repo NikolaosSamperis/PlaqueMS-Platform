@@ -26,7 +26,7 @@ By combining rich exploratory capabilities with machine learning-based predictio
 
 ## Results
 
-This section summarises the core modules and functionalities of PlaqueMS, following the structure of the system as presented in the thesis.
+This section summarises the core modules and functionalities of PlaqueMS, following the structure and workflow presented in the thesis.
 
 ---
 
@@ -36,10 +36,9 @@ This section summarises the core modules and functionalities of PlaqueMS, follow
   <img src="images/Home_page.png" width="70%">
 </p>
 
-The Home page serves as the entry point of the platform, providing an overview of PlaqueMS and its purpose.  
-It introduces users to the biological context of atherosclerosis and highlights the platform’s capabilities in multi-omics data exploration and predictive modelling.
+The Home page serves as the central entry point of PlaqueMS, introducing the biological context of atherosclerosis and the platform’s role in integrative multi-omics analysis.
 
-Precomputed visualisations (e.g. heatmaps and differential expression summaries) are presented to give immediate insight into the underlying datasets.
+It provides immediate access to core modules and presents precomputed visual summaries (e.g. differential expression outputs), allowing users to quickly explore dataset characteristics without requiring prior interaction.
 
 ---
 
@@ -49,14 +48,14 @@ Precomputed visualisations (e.g. heatmaps and differential expression summaries)
   <img src="images/Protein_annotations_page.png" width="70%">
 </p>
 
-The Proteins module enables querying of protein information using gene names or UniProt accession IDs.
+The Proteins module focuses on **protein-level metadata and annotation retrieval**.
 
 Users can:
+- Query proteins using gene names or UniProt accession IDs  
 - Retrieve protein annotations and mappings  
-- Explore protein presence across experiments  
-- Access harmonised identifiers across datasets  
+- Explore protein presence across experiments and datasets  
 
-This module supports efficient navigation between molecular entities and experimental data.
+This module acts as a **linking layer between biological entities and experimental data**, enabling consistent navigation across cohorts.
 
 ---
 
@@ -67,14 +66,14 @@ This module supports efficient navigation between molecular entities and experim
   <img src="images/Volcano_plot.png" width="45%">
 </p>
 
-This module provides interactive access to differential expression results across cohorts and experimental conditions.
+This module enables exploration of precomputed differential expression results across cohorts and plaque phenotypes.
 
 Key features include:
-- Volcano plots highlighting significantly regulated proteins  
-- Integration of statistical metrics (logFC, p-values)  
-- Identification of biologically relevant markers  
+- Interactive volcano plots for identifying significantly regulated proteins  
+- Access to statistical measures (log fold change, p-values)  
+- Dataset-specific filtering  
 
-The interface allows users to explore molecular differences between plaque phenotypes.
+It supports identification of molecular signatures associated with plaque progression and phenotype differences.
 
 ---
 
@@ -86,18 +85,19 @@ The interface allows users to explore molecular differences between plaque pheno
   <img src="images/Protein_network_edge_metrics.png" width="45%">
 </p>
 
-The Protein Networks module enables interactive exploration of protein–protein interaction (PPI) networks.
+The Protein Networks module provides **systems-level exploration of proteomic interactions**.
 
 Users can:
-- Visualise network structures derived from proteomic data  
-- Apply clustering (e.g. MCL) to identify functional modules  
-- Overlay differential expression results on network nodes  
+- Visualise protein–protein interaction (PPI) networks  
+- Identify functional modules using clustering approaches (e.g. MCL)  
+- Analyse node and edge-level network metrics  
+- Integrate expression data into network context  
 
-This supports systems-level interpretation of plaque biology.
+This enables interpretation of plaque biology beyond individual proteins.
 
 ---
 
-### 3.1.5 Authentication System Interface
+### 3.1.5 Authentication & Administration
 
 <p align="center">
   <img src="images/Login_page.png" width="45%">
@@ -105,17 +105,18 @@ This supports systems-level interpretation of plaque biology.
   <img src="images/Admin_dashboard.png" width="60%">
 </p>
 
-PlaqueMS includes a secure authentication system with:
+PlaqueMS implements a secure authentication system with:
 
 - User registration and login  
-- Password validation and protection mechanisms  
-- Role-based access control  
+- Role-based access control (user/admin)  
+- Administrative approval workflows  
+- User activity tracking  
 
-Certain modules are restricted to authenticated users, ensuring controlled access to sensitive data.
+Access to advanced analytical and clinical modules is restricted to authorised users.
 
 ---
 
-### 3.1.6 PlaQuery: Restricted Access Modules
+### 3.1.6 PlaQuery & Protein Abundance (Restricted Modules)
 
 <p align="center">
   <img src="images/Protein_search_engine.png" width="45%">
@@ -123,40 +124,32 @@ Certain modules are restricted to authenticated users, ensuring controlled acces
   <img src="images/Results_protein_search_engine.png" width="60%">
 </p>
 
-PlaQuery provides advanced querying capabilities across the integrated datasets.
+PlaQuery provides **advanced, phenotype-driven querying capabilities** across integrated datasets.
 
-Users can filter data based on:
-- Tissue region  
-- Clinical phenotype  
+Users can filter based on:
+- Clinical phenotype (e.g. calcification, symptoms)  
+- Tissue region and plaque type  
 - Demographics (age, sex)  
 - Experimental conditions  
 
-This enables phenotype-driven exploration of multi-cohort proteomics data.
+---
+
+#### Protein Abundance Integration
+
+Within PlaQuery, the **Protein Abundance functionality** enables:
+
+- Retrieval of quantitative protein expression values across subjects  
+- Cross-cohort comparison of protein levels  
+- Export of results (CSV, Excel, TSV)  
+- Structured tabular outputs with associated clinical metadata  
+
+This module directly links **query filters → protein-level quantitative data**, making it a core component of downstream analysis and model input generation.
 
 ---
 
-### 3.1.7 Protein Abundance Page
+### 3.1.7 Predictive Modelling (Calcification & SYNTAX Score)
 
 <p align="center">
-  <img src="images/Results_protein_search_engine.png" width="60%">
-</p>
-
-This module displays quantitative protein abundance values across samples and experiments.
-
-Features include:
-- Structured tabular output  
-- Summary statistics (average, min, max abundance)  
-- Export functionality (CSV, Excel, TSV)  
-
-It supports direct comparison of protein expression across cohorts and plaque regions.
-
----
-
-### 3.1.8 Calcification & SYNTAX Score Prediction
-
-<p align="center">
-  <img src="images/Calcification_prediction_page.png" width="45%">
-  <img src="images/Calcification_results.png" width="45%">
   <img src="images/SYNTAX_score_page.png" width="45%">
   <img src="images/SYNTAX_score_prediction_results.png" width="45%">
 </p>
@@ -164,13 +157,16 @@ It supports direct comparison of protein expression across cohorts and plaque re
 The prediction module integrates machine learning models trained on proteomics data.
 
 Users can:
-- Upload protein abundance data  
-- Select specific proteomic subsets (e.g. Core Matrisome)  
-- Obtain probabilistic predictions for:
-  - Plaque calcification status  
-  - SYNTAX score  
+- Upload protein abundance tables (single-sample or cohort-level)  
+- Select predefined protein panels (e.g. Core Matrisome)  
+- Apply optional preprocessing (e.g. log₂ transformation)  
 
-Outputs include both classification results and probability scores, enabling more nuanced interpretation.
+The system generates:
+- Predicted SYNTAX score (continuous output)  
+- Classification outputs for calcification status  
+- Structured result tables linked to clinical metadata  
+
+This module connects **data exploration with predictive analytics**, enabling translational insights.
 
 ---
 
@@ -182,13 +178,13 @@ Outputs include both classification results and probability scores, enabling mor
   <img src="images/Calcification_pred_GUHCL_vs_Volume_mm3.png" width="32%">
 </p>
 
-Model predictions demonstrated significant correlation with clinical imaging metrics:
+Model outputs demonstrate significant correlation with clinical imaging metrics:
 
 - Calcium mass  
-- CT score  
+- CT-derived scores  
 - Plaque volume  
 
-This indicates that the models capture continuous variation in calcification burden rather than simple binary outcomes.
+These results indicate that the models capture **continuous variation in calcification burden**, rather than simple binary classification.
 
 ---
 
@@ -198,12 +194,13 @@ This indicates that the models capture continuous variation in calcification bur
   <img src="images/SDS_violin_asymptomatic.png" width="50%">
 </p>
 
-The model differentiates between asymptomatic and symptomatic patients:
+The models enable clinically relevant patient stratification:
 
-- Higher predicted calcification probabilities in asymptomatic cases  
-- Statistically significant separation between groups  
+- Clear separation between symptomatic and asymptomatic groups  
+- Higher predicted calcification probabilities in specific patient subsets  
+- Statistically significant differences across clinical categories  
 
-This supports the clinical relevance of the predictive models.
+This highlights the potential of PlaqueMS as a **decision-support and hypothesis-generation tool**.
 
 ---
 
