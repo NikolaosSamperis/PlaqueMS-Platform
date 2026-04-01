@@ -153,8 +153,8 @@ It supports direct comparison of protein expression across cohorts and plaque re
 <p align="center">
   <img src="images/Calcification_prediction_page.png" width="45%">
   <img src="images/Calcification_results.png" width="45%">
-  <img src="images/SYNTAX_score_prediction_page.png" width="45%">
-  <img src="images/SYNTAX_score_prediction_results.png" width="45%">
+  <img src="images/SYNTAX_score_page.png" width="45%">
+  <img src="images/SYNTAX_score_results.png" width="45%">
 </p>
 
 The prediction module integrates machine learning models trained on proteomics data.
