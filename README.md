@@ -63,7 +63,8 @@ This module supports efficient navigation between molecular entities and experim
 ### 3.1.3 Differential Expression Analysis
 
 <p align="center">
-  <img src="images/Volcano_plot.png" width="50%">
+  <img src="images/Diff_expression_analysis_page.png" width="45%">
+  <img src="images/Volcano_plot.png" width="45%">
 </p>
 
 This module provides interactive access to differential expression results across cohorts and experimental conditions.
@@ -81,6 +82,8 @@ The interface allows users to explore molecular differences between plaque pheno
 
 <p align="center">
   <img src="images/Protein_networks.png" width="60%">
+  <img src="Protein_network_node_metrics.png" width="45%">
+  <img src="Protein_network_edge_metrics.png" width="45%">
 </p>
 
 The Protein Networks module enables interactive exploration of protein–protein interaction (PPI) networks.
