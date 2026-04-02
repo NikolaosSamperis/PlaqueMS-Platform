@@ -23,6 +23,46 @@ By combining rich exploratory capabilities with machine learning-based predictio
 >*High-level overview of the system architecture of PlaqueMS. Solid arrows indicate data flow from the frontend to the backend (user actions, HTTP/AJAX requests, and queries to the database), while dashed arrows represent data or results returned from the backend to the frontend, including rendered web pages, interactive visualizations, and downloadable files. Colored boxes distinguish the platform’s major components: purple denotes frontend user interface modules, green highlights backend logic and Django views, red indicates databases (MySQL and Neo4j), and grey represents external tools and machine learning modules. Certain modules and functionalities are accessible only to authenticated users or administrators. This diagram illustrates the coordinated interactions that enable seamless data analysis and visualization within the platform.*
 
 ---
+<br>
+
+## Motivation & Research Gaps
+
+Atherosclerosis remains poorly understood at the molecular level due to limitations in current data integration and analytical tools.
+
+### Key Gaps
+
+- **Fragmented multi-omics data**  
+  Omics datasets are often analysed in isolation, limiting systems-level insight.
+
+- **Underutilisation of proteomics**  
+  Tissue-based proteomics in human plaques is still limited compared to transcriptomics.
+
+- **Small cohorts & limited generalisability**  
+  Many studies rely on small datasets or non-human models.
+
+- **Lack of disease-specific tools**  
+  Existing platforms are not tailored to atherosclerosis and lack clinical integration.
+
+- **Static data exploration**  
+  Most tools provide fixed outputs with limited support for dynamic querying.
+
+- **Limited practical use of machine learning**  
+  ML models are rarely integrated into interactive, user-friendly platforms.
+
+### PlaqueMS Contribution
+
+PlaqueMS addresses these gaps by providing:
+
+- Integrated **proteomics + clinical + network data**
+- **Phenotype-driven, interactive exploration**
+- Hybrid **MySQL + Neo4j architecture**
+- Embedded **machine learning predictions**
+- A **web-based, user-friendly platform**
+
+This enables dynamic data interrogation and supports more translational cardiovascular research.
+
+---
+<br>
 
 ## Database Architecture
 
