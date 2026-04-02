@@ -323,3 +323,16 @@ For full details on methodology, results, and evaluation, refer to the complete 
 
 👉 [PlaqueMS Thesis PDF](./Thesis%20project%20Nikolaos%20Samperis.pdf)
 
+---
+<br>
+
+## 📄 License
+
+This project is licensed under the **Apache License 2.0**.  
+
+Copyright © 2026 Nikolaos Samperis
+
+See the [LICENSE](LICENSE) file for full details.
+
+---
+
